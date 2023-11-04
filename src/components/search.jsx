@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import logo from '../assets/img/trueEvents.png'
 
 const Search = () => {
 
@@ -41,6 +42,7 @@ const Search = () => {
         <>
             <div className="h-screen w-full bg-dark relative flex overflow-hidden">
                 <aside className="h-full w-16 flex flex-col space-y-10 items-center justify-center relative bg-gray-800 text-white">
+                    <img className='absolute left-0 top-0 h-16' src={logo} alt="logo" />
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-white  hover:duration-300 hover:ease-linear focus:bg-white">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
                     </div>
@@ -50,12 +52,6 @@ const Search = () => {
                     <div className="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-white  hover:duration-300 hover:ease-linear focus:bg-white">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <div className="h-10 w-10 flex items-center justify-center rounded-lg cursor-pointer hover:text-gray-800 hover:bg-white  hover:duration-300 hover:ease-linear focus:bg-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
                 </aside>
@@ -77,7 +73,7 @@ const Search = () => {
                         </div>
                     </header>
                     <main className="w-full h-full flex relative overflow-y-hidden">
-                        <div className="h-full w-full m-4 flex flex-wrap rounded-tl grid-flow-col grid-rows-3 gap-5 overflow-y-scroll ml-28">
+                        <div className="h-auto w-full m-4 flex flex-wrap rounded-tl grid-flow-col grid-rows-3 gap-5 overflow-y-scroll ml-28">
                             {results.map((events) => (
                                 <div className="max-w-sm bg-white shadow-xl rounded-lg overflow-hidden my-4">
                                     <img className="w-full h-60 object-cover object-center" src={events.imagen} alt="avatar" />
@@ -86,7 +82,7 @@ const Search = () => {
                                     </div>
                                     <div className="py-4 px-6">
                                         <h1 className="text-2xl font-semibold text-gray-800">{events.nombre_evento}</h1>
-                                        <p className="py-2 text-lg text-gray-700">{events.descripcion}</p>
+                                        <p className=" py-2 text-xl text-gray-700">{events.descripcion}</p>
                                     </div>
                                 </div>
                             ))}
